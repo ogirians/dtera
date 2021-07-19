@@ -10,18 +10,18 @@ $myprofil             = new Nav_model();
 $nav_profil           = $myproduk->nav_profil();
 ?>
 <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
+  <header id="header" class="fixed-top">
+    <div class="container d-flex justify-content-between align-items-center ">
 
-      <div class="logo mr-auto">
+      <div class="logo float-left">
         <h1 class="text-light"><a href="{{ asset('/') }}"><span>
-          <img src="{{ asset('public/upload/image/'.$site->logo) }}" alt="Nitrico" style="min-height: 50px; width: auto;">
+          <img src="{{ asset('public/upload/image/'.$site->logo) }}" alt="Dtera" style="min-height: 50px; width: auto; margin-top:-10px;">
         </span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="{{ asset('/') }}"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
-      <nav class="nav-menu d-none d-lg-block">
+      <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
           
             <li class="active"><a href="{{ asset('/') }}">Home</a></li>
@@ -44,16 +44,16 @@ $nav_profil           = $myproduk->nav_profil();
               </ul>
             </li>
             <li class="drop-down"><a href="#">Galeri</a>
-              <ul>
-                
+              <ul>                
                 <li><a href="{{ asset('video') }}">Video Youtube</a></li>
                 <li><a href="{{ asset('galeri') }}">Galeri Gambar</a></li>
                 <li><a href="{{ asset('download') }}">Unduhan File</a></li>
               </ul>
             </li>
             <li><a href="{{ asset('kontak') }}">Kontak</a></li>
+            
               <li>
-                  <a href="{{ asset('pemesanan') }}" class="orange" title="Form Pemesanan"><div class="belanja"><i class="fa fa-shopping-cart"></i> Form Order</div></a>
+                  <a href="{{ asset('pemesanan') }}" class="orange" style="margin-top: -5px" title="Form Pemesanan"><div class="belanja"><i class="fa fa-shopping-cart"></i> Form Order</div></a>
               </li>
                      
             

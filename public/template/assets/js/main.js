@@ -168,6 +168,13 @@
     items: 1
   });
 
+  var heroCarousel = $("#heroCarousel");
+
+  heroCarousel.on('slid.bs.carousel', function(e) {
+    $(this).find('h2').addClass('animate__animated animate__fadeInDown');
+    $(this).find('p, .btn-get-started').addClass('animate__animated animate__fadeInUp');
+  });
+
   // Initi AOS
   AOS.init({
     duration: 1000,

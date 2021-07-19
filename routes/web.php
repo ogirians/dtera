@@ -33,8 +33,8 @@ Route::post('login/cek', 'Login@cek');
 Route::get('login/lupa', 'Login@lupa');
 Route::get('login/logout', 'Login@logout');
 // Berita
-Route::get('berita', 'Berita@index');
-Route::get('berita/read/{par1}', 'Berita@read');
+Route::get('/berita', 'Berita@index');
+Route::get('/berita/read/{par1}', 'Berita@read');
 // download
 Route::get('download', 'Download@index');
 Route::get('download/unduh/{par1}', 'Download@unduh');

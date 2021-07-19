@@ -1,5 +1,5 @@
 <!-- ======= Hero Section ======= -->
-<section id="hero">
+<section id="berita">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">

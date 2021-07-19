@@ -54,8 +54,8 @@ $site       = DB::table('konfigurasi')->first();
   
 </script>
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <div class="footer-newsletter">
       <div class="container">
         <div class="row">
 

@@ -19,12 +19,14 @@ $site = DB::table('konfigurasi')->first();
   <link href="{{ asset('public/template/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('public/template/assets/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
   <link href="{{ asset('public/template/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('public/assets/vendor/venobox/venobox.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/template/assets/vendor/venobox/venobox.css') }}" rel="stylesheet">
   <link href="{{ asset('public/template/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
   <link href="{{ asset('public/template/assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
   <link href="{{ asset('public/template/assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/template/assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  
   <!-- Template Main CSS File -->
-  <link href="{{ asset('public/template/assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/template/assets/css/style.css') }}" rel="stylesheet">
    <script src="{{ asset('public/admin/vendor/jquery/jquery.min.js') }}"></script>
   <!-- JQUERY UI -->
   <link rel="stylesheet" href="{{ asset('public/jquery-ui/jquery-ui.min.css') }}">
@@ -36,6 +38,7 @@ $site = DB::table('konfigurasi')->first();
   <!-- sweetalert -->
   <script src="{{ asset('public/sweetalert/js/sweetalert.min.js') }}"></script>
   <link rel="stylesheet" type="text/css" href="{{ asset('public/sweetalert/css/sweetalert.css') }}">
+
   <style type="text/css" media="screen">
     a.orange {
       color: #FFF;
@@ -49,9 +52,7 @@ $site = DB::table('konfigurasi')->first();
       color: #FFF;
       border: solid 2px #000;
     }
-    .nav-menu {
-      margin-top: 10px;
-    }
+    
     .kotak {
       color: #666 !important;
       background-color: #FFF;
@@ -117,6 +118,8 @@ $site = DB::table('konfigurasi')->first();
     .galeri {
       margin-bottom: 30px;
     }
+
+    
   </style>
 <?php echo $site->metatext; ?>
 </head>
