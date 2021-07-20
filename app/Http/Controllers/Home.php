@@ -8,6 +8,7 @@ use App\Produk_model;
 use App\Rekening_model;
 use App\Berita_model;
 use App\Pemesanan_model;
+use App\Video_model;
 use PDF;
 
 class Home extends Controller
@@ -21,6 +22,11 @@ class Home extends Controller
 		$produks = $model->listing();
         $news   = new Berita_model();
         $berita = $news->home();
+        $video = DB::table('video')
+                    ->select('*')
+                    ->orderBy('id_video','DESC')
+                    ->limit(3)
+                    ->get();
 
         $data = array(  'title'     => $site->namaweb.' - '.$site->tagline,
                         'deskripsi' => $site->namaweb.' - '.$site->tagline,
@@ -29,6 +35,7 @@ class Home extends Controller
                         'site'		=> $site,
                         'produks'	=> $produks,
                         'berita'    => $berita,
+                        'video'     => $video,
                         'content'   => 'home/index'
                     );
         return view('layout/wrapper',$data);

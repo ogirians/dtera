@@ -85,23 +85,36 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-lg-6 video-box">
-            <img src="assets/img/why-us.jpg" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          
+          <div class="col-lg-6 video-box" style="margin-bottom:20px;">
+                <img src="assets/img/why-us.jpg" class="img-fluid" alt="">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video[0]->video }}?rel=0" allowfullscreen></iframe>
+                </div>
           </div>
 
-          <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+          <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <div class="row">
+              <div class="col-lg-4 d-flex flex-column justify-content-center">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video[1]->video }}?rel=0" allowfullscreen></iframe>
+                  </div>
+              </div>
+                <div class="col-lg-8 d-flex flex-column justify-content-center py-2">
+                    <h4 class="title" style="font-size: 15px;"><a href=""><?php echo $video[1]->judul ?></a></h4>
+                    <p class="description" style="font-size: 12px;"><?php echo $video[1]->keterangan ?></p>
+                </div>
             </div>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            <div class="row">
+              <div class="col-lg-4 d-flex flex-column justify-content-center">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video[2]->video }}?rel=0" allowfullscreen></iframe>
+                  </div>
+              </div>
+                <div class="col-lg-8 d-flex flex-column justify-content-center py-2">
+                    <h4 class="title" style="font-size: 15px;"><a href=""><?php echo $video[2]->judul ?></a></h4> 
+                    <p class="description" style="font-size: 12px;"><?php echo $video[2]->keterangan ?></p>
+                </div>
             </div>
 
           </div>
