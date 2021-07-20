@@ -96,9 +96,7 @@ $site = DB::table('konfigurasi')->first();
       padding: 0 !important;
       border-bottom: solid thin #EEE;
     }
-    #hero h2 {
-      color: #000;
-    }
+   
     .slideku h2 {
       color: #FFF !important;
     }

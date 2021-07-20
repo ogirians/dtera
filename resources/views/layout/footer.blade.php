@@ -53,25 +53,14 @@ $site       = DB::table('konfigurasi')->first();
 <script>
   
 </script>
+
   <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-    <div class="footer-newsletter">
+
+
+    <div class="footer-top">
       <div class="container">
         <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-info">
-              <h3><?php echo $site->namaweb?></h3>
-              <div class="pb-3">
-                <?php echo $site->deskripsi ?>
-              </div>
-              <div class="social-links mt-3">
-                <a href="<?php echo $site->facebook ?>" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="<?php echo $site->instagram ?>" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="<?php echo $site->twitter ?>" class="google-plus"><i class="bx bxl-youtube"></i></a>
-              </div>
-            </div>
-          </div>
 
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Useful Links</h4>
@@ -84,8 +73,8 @@ $site       = DB::table('konfigurasi')->first();
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Pemesanan</h4>
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
             <p>
               <strong><?php echo strtoupper($site->namaweb) ?></strong>
               <br><?php echo nl2br($site->alamat) ?>
@@ -97,19 +86,34 @@ $site       = DB::table('konfigurasi')->first();
 
           </div>
 
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>About <?php echo $site->namaweb?> </h3>
+            <p><?php echo $site->deskripsi ?></p>
+            <div class="social-links mt-3">
+                <a href="<?php echo $site->facebook ?>" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="<?php echo $site->instagram ?>" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="<?php echo $site->twitter ?>" class="google-plus"><i class="bx bxl-youtube"></i></a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span><?php echo $site->namaweb ?></span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Dtera</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Developed by <a href="https://javawebmedia.com/">Java Web Media</a>
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->
+
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
   <div id="preloader"></div>
   <!-- Vendor JS Files -->
