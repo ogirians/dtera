@@ -70,42 +70,38 @@
     <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
       <div class="container">
 
+      @if($video != null)
         <div class="row">
-          
-          <div class="col-lg-6 video-box" style="margin-bottom:20px;">
-                <img src="assets/img/why-us.jpg" class="img-fluid" alt="">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video[0]->video }}?rel=0" allowfullscreen></iframe>
-                </div>
-          </div>
 
-          <div class="col-lg-6 d-flex flex-column justify-content-center">
-            <div class="row">
-              <div class="col-lg-4 d-flex flex-column justify-content-center">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video[1]->video }}?rel=0" allowfullscreen></iframe>
-                  </div>
-              </div>
-                <div class="col-lg-8 d-flex flex-column justify-content-center py-2">
-                    <h4 class="title" style="font-size: 15px;"><a href=""><?php echo $video[1]->judul ?></a></h4>
-                    <p class="description" style="font-size: 12px;"><?php echo $video[1]->keterangan ?></p>
+            <?php $isFirst = true; foreach($video as $video) { 
+                if ($isFirst) {
+                  $isFirst = false; ?>
+                 <div class="col-lg-6 video-box" style="margin-bottom:20px;">
+                    <img src="assets/img/why-us.jpg" class="img-fluid" alt="">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->video }}?rel=0" allowfullscreen></iframe>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-4 d-flex flex-column justify-content-center">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video[2]->video }}?rel=0" allowfullscreen></iframe>
-                  </div>
-              </div>
-                <div class="col-lg-8 d-flex flex-column justify-content-center py-2">
-                    <h4 class="title" style="font-size: 15px;"><a href=""><?php echo $video[2]->judul ?></a></h4> 
-                    <p class="description" style="font-size: 12px;"><?php echo $video[2]->keterangan ?></p>
-                </div>
-            </div>
+                <div class="col-lg-6 d-flex flex-column justify-content-center">        
+             <?php } else { ?>                 
+                 
+                    <div class="row">
+                        <div class="col-lg-4 d-flex flex-column justify-content-center">
+                            <div class="embed-responsive embed-responsive-16by9">
+                              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->video }}?rel=0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                          <div class="col-lg-8 d-flex flex-column justify-content-center py-2">
+                              <h4 class="title" style="font-size: 15px;"><a href=""><?php echo $video->judul ?></a></h4>
+                              <p class="description" style="font-size: 12px;"><?php echo $video->keterangan ?></p>
+                          </div>
+                    </div>
+                     
+           <?php   }}   ?> 
+           </div>      
 
-          </div>
         </div>
-
+        @endif               
       </div>
     </section><!-- End Why Us Section -->
 
