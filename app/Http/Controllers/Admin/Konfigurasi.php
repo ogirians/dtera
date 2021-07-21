@@ -117,6 +117,7 @@ class Konfigurasi extends Controller
             'deskripsi'         => $request->deskripsi,
             'keywords'          => $request->keywords,
             'metatext'          => $request->metatext,
+            'whatsapp'          => $request->whatsapp,
             'facebook'          => $request->facebook,
             'twitter'           => $request->twitter,
             'instagram'         => $request->instagram,

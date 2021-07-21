@@ -40,38 +40,24 @@
       <div class="container">
 
         <div class="row">
+
+        <?php  
+            if($produks) {
+            foreach($produks as $produk) { ?>
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="icon-box icon-box-pink">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box icon-box-cyan">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box icon-box-green">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box icon-box-blue">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <img src="{{ asset('public/upload/image/'.$produk->gambar) }}" alt="<?php  echo $produk->nama_produk ?>" class="img-fluid img-thumbnail" style="border-radius:50%; margin-bottom:20px;">
+              <h4 class="title"><a href=""> <?php  echo $produk->nama_produk ?></a></h4>
+              <p class="description"><?php  echo $produk->isi ?></p>
+              <a style="border-radius:0px;" href="{{ $site->whatsapp }}" class="btn btn-sm btn-success get-started animate__animated animate__fadeInUp"><i class='bx bxl-whatsapp'></i> Hubungi Kami</a>
             </div>
-          </div>
-          
+            
+          </div>         
+          <?php }}else{ ?>
+            <div class="col-md-12">
+            <p class="alert alert-info">Produk tidak ditemukan. Gunakan kata kunci pencarian yang berbeda.</p>
+            </div>
+          <?php } ?>
 
         </div>
 
@@ -154,8 +140,8 @@
               </div>
               <?php } ?>
               <div class="col-md-12 entries" style="text-align:center;">
-                <div class="read-more">
-                  <a class="btn btn-primary" style="color:white ; background-color: #68a4c4; border-color : #68a4c4; border-radius:0px; margin-top: -50px;" href="{{ asset('berita') }}">Berita lainnya..</a>
+                <div class="">
+                  <a class="btn btn-sm btn-primary" style="color:white ; background-color: #68a4c4; border-color : #68a4c4; border-radius:0px; margin-top: -50px;" href="{{ asset('berita') }}">Berita lainnya..</a>
                 </div>              
               </div>
               

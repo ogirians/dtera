@@ -94,6 +94,11 @@
     </div>
     
     <h3>Social network</h3><hr>
+
+    <div class="form-group">
+    <label>URL Whatsapp <i class="fa fa-whatsapp"></i></label>
+    <input type="text" name="whatsapp" placeholder="link ke whatsapp" value="<?php echo $site->whatsapp ?>" class="form-control">
+    </div>
     
     <div class="form-group">
     <label>URL Facebook <i class="fa fa-facebook"></i></label>

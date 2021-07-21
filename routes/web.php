@@ -35,6 +35,10 @@ Route::get('login/logout', 'Login@logout');
 // Berita
 Route::get('/berita', 'Berita@index');
 Route::get('/berita/read/{par1}', 'Berita@read');
+Route::get('/berita/kategori/{par1}', 'Berita@kategori');
+Route::get('/berita/cari', 'Berita@index');
+Route::post('/berita/cari', 'Berita@cari');
+
 // download
 Route::get('download', 'Download@index');
 Route::get('download/unduh/{par1}', 'Download@unduh');

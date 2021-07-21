@@ -15,6 +15,7 @@ class Berita extends Controller
     	if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
     	$myberita 			= new Berita_model();
 		$berita 			= $myberita->semua();
+        
 		$kategori 	= DB::table('kategori')->orderBy('urutan','ASC')->get();
 
 		$data = array(  'title'       => 'Data Berita',
@@ -22,6 +23,8 @@ class Berita extends Controller
 						'kategori'    => $kategori,
                         'content'     => 'admin/berita/index'
                     );
+
+        
         return view('admin/layout/wrapper',$data);
     }
 
@@ -36,7 +39,7 @@ class Berita extends Controller
 
         $data = array(  'title'             => 'Data Berita',
                         'berita'            => $berita,
-                        'kategori'   => $kategori,
+                        'kategori'          => $kategori,
                         'content'           => 'admin/berita/index'
                     );
         return view('admin/layout/wrapper',$data);

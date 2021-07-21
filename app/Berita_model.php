@@ -19,6 +19,8 @@ class Berita_model extends Model
             ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori','users.nama')
             ->orderBy('id_berita','DESC')
             ->get();
+
+            
         return $query;
     }
 
@@ -49,6 +51,19 @@ class Berita_model extends Model
         return $query;
     }
 
+    public function cari_page($keywords)
+    {
+        $query = DB::table('berita')
+            ->join('kategori', 'kategori.id_kategori', '=', 'berita.id_kategori','LEFT')
+            ->join('users', 'users.id_user', '=', 'berita.id_user','LEFT')
+            ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori','users.nama')
+            ->where('berita.judul_berita', 'LIKE', "%{$keywords}%") 
+            ->orWhere('berita.isi', 'LIKE', "%{$keywords}%") 
+            ->orderBy('id_berita','DESC')
+            ->paginate(4);
+        return $query;
+    }
+
     // kategori
     public function all_kategori($id_kategori)
     {
@@ -59,6 +74,18 @@ class Berita_model extends Model
             ->where(array(  'berita.id_kategori'    => $id_kategori))
             ->orderBy('id_berita','DESC')
             ->get();
+        return $query;
+    }
+
+    public function all_kategori_page($id_kategori)
+    {
+        $query = DB::table('berita')
+            ->join('kategori', 'kategori.id_kategori', '=', 'berita.id_kategori','LEFT')
+            ->join('users', 'users.id_user', '=', 'berita.id_user','LEFT')
+            ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori','users.nama')
+            ->where(array(  'berita.id_kategori'    => $id_kategori))
+            ->orderBy('id_berita','DESC')
+            ->paginate(4);
         return $query;
     }
 
@@ -97,7 +124,7 @@ class Berita_model extends Model
             ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori','users.nama')
             ->where('berita.status_berita','Publish')
             ->orderBy('id_berita','DESC')
-            ->paginate(10);
+            ->paginate(4);
         return $query;
     }
 

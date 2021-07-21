@@ -1,67 +1,92 @@
-<!-- ======= Hero Section ======= -->
-<section id="berita">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
-        <div class="kotak">
-          <div class="row">
 
-            <div class="col-md-12">
-              <h1 class="text-center"><?php echo $title ?></h1>
-              <hr>
-            </div>
-              
+    <!-- ======= Blog breadcums ======= -->
+    <section class="breadcrumbs" style="margin-top:80px;">
+      <div class="container">
 
-            <?php  
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Berita</h2>
+
+          <ol>
+            <li><a href="{{ asset('/') }}">Home</a></li>
+            <li>Berita</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Blog breadcum -->
+
+<!-- ======= Blog Section ======= -->
+<section class="blog" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+            
+           <?php  
             if($beritas) {
             foreach($beritas as $berita) { ?>
-            <div class="col-lg-12 col-md-12 col-sm-12 mb-4 berita">
-              <div class="row">
-                  <figure class="thumnail col-md-4">
-                    <a href="{{ asset('berita/detail/'.$berita->slug_berita) }}">
-                      <img src="{{ asset('public/upload/image/thumbs/'.$berita->gambar) }}" alt="<?php  echo $berita->judul_berita ?>" class="img-fluid img-thumbnail">
-                    </a>
-                  </figure>
-                  <div class="keterangan col-md-8">
-                      <h3>
-                        <a href="{{ asset('berita/detail/'.$berita->slug_berita) }}">
-                          <?php  echo $berita->judul_berita ?>
-                        </a>
-                      </h3>
-                    <p class="harga"><?php echo \Illuminate\Support\Str::limit(strip_tags($berita->isi), 350, $end='...') ?></p>
-                    <div class="link-berita">
-                      <p>
-                        <input type="hidden" name="quantity" id="<?php echo $berita->id_berita;?>" value="1" class="quantity">
-                        <a href="{{ asset('berita/read/'.$berita->slug_berita) }}" class="btn btn-success btn-sm"><i class="fa fa-search"></i> Baca Detail...</a>
-                          
-                      </p>
-                  </div>
-                  </div>
-                  
-                </div>
-            </div>
-          <?php } ?>
-          <div class="col-md-12">
-            <hr>
-                <p class="text-center">
-                  {{ $beritas->links() }}
+            <article class="entry">
+
+              <div class="entry-img">
+                <img src="{{ asset('public/upload/image/thumbs/'.$berita->gambar) }}" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                <a href="{{ asset('berita/read/'.$berita->slug_berita) }}"><?php  echo $berita->judul_berita ?></a>
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html"><?php  echo $berita->nama ?></a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time><?php echo date('d-m-Y', strtotime($berita->tanggal_post))  ?></time></a></li>
+                  </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>
+                <?php echo \Illuminate\Support\Str::limit(strip_tags($berita->isi), 350, $end='...') ?>
                 </p>
-            </div>
-          </div>
-          <?php }else{ ?>
-          <div class="col-md-12">
-            <p class="alert alert-info">Produk tidak ditemukan. Gunakan kata kunci pencarian yang berbeda.</p>
-          </div>
-          <?php } ?>
-          <div class="col-md-12">
-            <hr>
-          </div>
-            <div class="col-md-12">
-              
-            </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</section><!-- End Hero -->
+                <div class="read-more">
+                  <a href="{{ asset('berita/read/'.$berita->slug_berita) }}">Read More</a>
+                </div>
+              </div>
+
+            </article><!-- End blog entry -->
+            <?php }} else{ ?>
+              <div class="col-md-12">
+              <p class="alert alert-info">Produk tidak ditemukan. Gunakan kata kunci pencarian yang berbeda.</p>
+              </div>
+            <?php } ?>
+            <!-- End blog entry -->
+
+           <?php if($cari != true){?>
+              <article class="entry" style="padding:0px;">
+              <div class="row" style="text-align:center;">
+                <div class="col-md-4" style="margin-top:35px;">
+                  <a>Halaman : <?php  echo $beritas->currentPage() ?></a> <br/>
+                </div>
+                <div class="col-md-4" style="margin-top:35px;">
+                <p>Jumlah Artikel : <?php  echo $beritas->total() ?></p> <br/>
+                </div>
+                <div class="col-md-4" style="margin-top:35px;">
+                <p>Data Per Halaman : <?php  echo $beritas->perPage() ?></p>   <br/>
+                </div>
+              </div>
+              </article >
+              {{ $beritas->links() }}
+            <?php } ?>           
+                      
+            
+          </div><!-- End blog entries list -->
+
+            <!--sidebar -->
+          <div class="col-lg-4">
+              @include('berita.sidebar')
+          </div><!-- End blog sidebar -->
+
+        </div><!-- End .row -->
+
+      </div><!-- End .container -->
+
+    </section><!-- End Blog Section -->
