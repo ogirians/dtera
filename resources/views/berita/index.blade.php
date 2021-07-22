@@ -90,3 +90,10 @@
       </div><!-- End .container -->
 
     </section><!-- End Blog Section -->
+
+    <script>
+        function navHeadFunc(menu) {
+          document.getElementsByTagName("li")[0].removeAttribute("class")    
+          
+        }
+    </script>

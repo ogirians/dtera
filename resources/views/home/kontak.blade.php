@@ -1,42 +1,63 @@
-<!-- ======= Hero Section ======= -->
-<section id="hero">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
-        <div class="kotak">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h1><?php echo $title ?></h1>
-              <hr>
-            </div>
-            
-            <div class="col-md-4">
-              <p>
-                <strong><?php echo $site->namaweb ?></strong>
-                <br><?php echo nl2br($site->alamat) ?>
-                <br>Telepon: <?php echo $site->telepon ?>
-                <br>Email: <?php echo $site->email ?>
-                <br>Website: <?php echo $site->website ?>
-              </p>
-            </div>
-            <div class="col-md-8">
-              <style type="text/css" media="screen">
-                iframe {
-                  width: 100%;
-                  height: auto;
-                  max-height: 400px;
-                }
-              </style>
-              <div class="kotak" style="border:solid 3px #eee; padding: 10px; border-radius: 5px; background-color: #F5F5F5;">
-                <?php echo $site->google_map ?>
+<!-- ======= Blog breadcums ======= -->
+<section class="breadcrumbs" style="margin-top:80px;">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Kontak</h2>
+
+          <ol>
+            <li><a href="{{ asset('/') }}">Home</a></li>
+            <li>Kontak</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Blog breadcum -->
+
+   <!-- ======= Contact Section ======= -->
+   <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-12">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>Our Address</h3>
+                  <p><?php echo nl2br($site->alamat) ?></p>
+                </div>
               </div>
-              
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p><?php echo $site->email ?></p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Us</h3>
+                  <p><?php echo $site->telepon ?></p>
+                </div>
+              </div>
             </div>
 
           </div>
+
+
         </div>
+
       </div>
-    </div>
-  </div>
-</section><!-- End Hero -->
+    </section><!-- End Contact Section -->
+
+     <!-- ======= Map Section ======= -->
+     <section class="map mt-2">
+      <div class="container-fluid p-0">
+      <?php echo $site->google_map ?>
+      </div>
+    </section><!-- End Map Section -->
 

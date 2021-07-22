@@ -1,42 +1,51 @@
-<!-- ======= Hero Section ======= -->
-<section id="hero" class="team">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
-        <div class="kotak">
-          <div class="row" data-aos="fade-left">
-            <div class="col-md-12 text-center">
-              <h1><?php echo $title ?></h1>
-              <hr>
-            </div>
+<!-- ======= Blog breadcums ======= -->
+<section class="breadcrumbs" style="margin-top:80px;">
+      <div class="container">
 
-            
-              <?php foreach($videos as $video) { ?>
-          <div class="col-lg-6 col-md-6 galeri">
-            <div class="member" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->video }}?rel=0" allowfullscreen></iframe>
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Video</h2>
+
+          <ol>
+            <li><a href="{{ asset('/') }}">Home</a></li>
+            <li>Video</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Blog breadcum -->
+
+
+ <!-- ======= Team Section ======= -->
+ <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+        <?php foreach($videos as $video) { ?>     
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->video }}?rel=0" allowfullscreen></iframe>
+                <div class="social">
+                  <a href=""><i class="icofont-twitter"></i></a>
+                  <a href=""><i class="icofont-facebook"></i></a>
+                  <a href=""><i class="icofont-instagram"></i></a>
+                  <a href=""><i class="icofont-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
                 <h4><?php echo $video->judul ?></h4>
-                <span><?php echo $video->keterangan ?></span>
+                <p><?php echo $video->keterangan ?></p>
               </div>
             </div>
           </div>
           <?php } ?>
-
-          <div class="col-md-12">
-            <br><br>
-            <hr>
-                <p class="text-center">
-                  {{ $videos->links() }}
-                </p>
-            </div>
-          </div>
         </div>
+        <div class="blog">
+    
+            {{ $videos->links() }}
+
+        </div>
+
+        
       </div>
-    </div>
-  </div>
-</section>
+    </section><!-- End Team Section -->

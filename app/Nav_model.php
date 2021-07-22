@@ -38,7 +38,6 @@ class Nav_model extends Model
             ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori')
             ->where(array(	'berita.status_berita'	=> 'Publish',
                             'berita.jenis_berita'  => 'Profil'))
-            ->groupBy('kategori.id_kategori')
             ->orderBy('berita.id_berita','DESC')
             ->get();
         return $query;

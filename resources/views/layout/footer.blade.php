@@ -118,6 +118,10 @@ $site       = DB::table('konfigurasi')->first();
   <div id="preloader"></div>
   <!-- Vendor JS Files -->
   <script>
+    
+  
+   
+
 $( ".datepicker" ).datepicker({
   inline: true,
   changeYear: true,
