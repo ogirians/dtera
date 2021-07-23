@@ -52,7 +52,7 @@
                 <br>
                 <a style="border-radius:0px;" href="{{ asset('produk/detail/'.$produk->slug_produk) }}" class="btn btn-sm btn-primary get-started animate__animated animate__fadeInUp"> Selengkapnya..</a>
                 <p style="margin-top:16px;">atau</p>
-                <a style="border-radius:0px;" href="{{ $site->whatsapp }}" class="btn btn-sm btn-success get-started animate__animated animate__fadeInUp"><i class='bx bxl-whatsapp'></i> Hubungi Kami</a>
+                <a style="border-radius:0px;" href="https://api.whatsapp.com/send?phone={{$site->whatsapp}}&text=saya mau info tentang {{$produk->nama_produk}}" class="btn btn-sm btn-success get-started animate__animated animate__fadeInUp"><i class='bx bxl-whatsapp'></i> Hubungi Kami</a>
               </div>
               
             </div>         

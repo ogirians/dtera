@@ -59,7 +59,7 @@ $site = DB::table('konfigurasi')->first();
       margin: 2% 0 10% 0;
       padding: 20px 20px 40px 20px;
       border-radius: 20px;
-      border: solid 10px #ffcc00;
+      border: solid 10px #fff0;
     }
     .kotak h1 {
       color: #571C5C !important;

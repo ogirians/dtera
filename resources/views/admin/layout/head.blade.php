@@ -54,6 +54,7 @@ $site                 = DB::table('konfigurasi')->first();
       max-width: 200px;
       height: auto;
     }
+    
   </style>
   </head>
 

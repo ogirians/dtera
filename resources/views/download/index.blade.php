@@ -30,7 +30,7 @@
               <table id="example1" class="display table table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <tr class="bg-info">
+                    <tr class="" style="background-color:#1e4356; color:white; ">
                         <th width="5%" class="text-center">
                             NO
                         </th>

@@ -26,7 +26,7 @@
           <div class="row">
             <div class="col-md-12">
               <p class="text-right">
-                <a href="{{ asset('produk') }}" class="btn btn-success btn-sm"><i class="fa fa-file-pdf"></i> Produk Lainnya</a>
+                <!--<a href="{{ asset('produk') }}" class="btn btn-success btn-sm"><i class="fa fa-file-pdf"></i> Produk Lainnya</a>-->
                 <a href="{{ asset('produk/cetak/'.$produk->slug_produk) }}" class="btn btn-warning btn-sm" target="_blank"><i class="fa fa-file-pdf"></i> Cetak</a>
               </p>
               <hr>
@@ -58,7 +58,7 @@
             <div class="col-lg-8 col-md-7 col-sm-12 produk">
               
               <h1><?php echo $title ?></h1>
-              <h5>Rp 
+              <h5>mulai Rp 
                 <span class="harga"><?php 
                 $date1    = strtotime($produk->mulai_diskon); 
                 $date2    = strtotime($produk->selesai_diskon); 
@@ -77,17 +77,15 @@
                 </span>
               </h5>
               <hr>
-                <p><strong>Ukuran:</strong>
-                  <br><?php echo $produk->ukuran; ?> | Berat: <?php echo $produk->berat; ?> gram
-                </p>
+                
                 <hr>
                 <div class="input-group">                  
-                  <input type="number" name="quantity" id="<?php echo $produk->id_produk;?>" class="quantity form-control col-md-2" min="<?php echo $produk->jumlah_order_min ?>" max="<?php echo $produk->jumlah_order_max ?>" value="1" required>
+                  
 
                   <span class="input-group-btn">
                     
-                      <a href="{{ asset('pemesanan?id_produk='.$produk->id_produk) }}" class="btn btn-info">
-                        <i class="fa fa-shopping-cart"></i> Pesan Produk Ini
+                      <a href="https://api.whatsapp.com/send?phone={{$site->whatsapp}}&text=saya mau info tentang {{$produk->nama_produk}}" class="btn btn-success">
+                        <i class="fa fa-shopping-cart"></i> Hubungi via WA
                       </a>
                   </span>
                 </div>
@@ -99,7 +97,7 @@
             <?php  if($produk_all) { ?>
             <div class="col-md-12">
               <hr>
-              <h3>Produk <?php echo $kategori_produk->nama_kategori_produk ?> lainnya</h3>
+              <h4>Produk <?php echo $kategori_produk->nama_kategori_produk ?> lainnya</h4>
               <hr>
               
             </div>
@@ -123,9 +121,7 @@
                   <div class="link-produk">
                     <p>
                       <a href="{{ asset('produk/detail/'.$produk->slug_produk) }}" class="btn btn-success btn-sm"><i class="fa fa-search"></i> Detail</a>
-                      <a href="{{ asset('pemesanan?id_produk='.$produk->id_produk) }}" class="btn btn-info btn-sm">
-                          <i class="fa fa-shopping-cart"></i> Pesan Produk Ini
-                        </a>
+                     
                     </p>
                 </div>
             </div>

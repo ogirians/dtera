@@ -24,7 +24,7 @@ $nav_profil           = $myprofil ->nav_profil();
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
           
-            <li id="homeMenu" class="active"><a href="{{ asset('/') }}" onclick="navHeadFunc(1)">Home</a></li>
+            <li id="homeMenu" class=""><a href="{{ asset('/') }}" onclick="navHeadFunc(1)">Home</a></li>
             <li id="profilMenu" class="drop-down"><a href="" onclick="navHeadFunc(2)">Profil</a>
               <ul>
                 <?php foreach($nav_profil as $nav_profil) { ?>

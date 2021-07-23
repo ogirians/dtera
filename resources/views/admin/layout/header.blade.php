@@ -31,11 +31,19 @@ $site                 = DB::table('konfigurasi')->first();
   .sidebar .nav-item .nav-link span {
     font-size: 0.75rem !important;
   }
+
+  .#accordionSidebar{
+    background-color : #1e4356;
+  }
+
+  .primary {
+    background-color : #1e4356;
+  }
 </style>
 <!--Page Wrapper -->
   <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul style="background-color:#1e4356;" class="navbar-nav sidebar sidebar-dark accordion"  id="accordionSidebar">
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-left" href="{{ asset('admin/dasbor') }}">
         <div class="sidebar-brand-icon">
