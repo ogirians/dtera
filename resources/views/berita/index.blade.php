@@ -72,9 +72,13 @@
                 <div class="col-md-4" style="margin-top:35px;">
                 <p>Data Per Halaman : <?php  echo $beritas->perPage() ?></p>   <br/>
                 </div>
+                 <div class="col-md-12" style="margin-top:35px;">
+                {{ $beritas->links() }}
+                </div>
               </div>
+               
               </article >
-              {{ $beritas->links() }}
+             
             <?php } ?>           
                       
             

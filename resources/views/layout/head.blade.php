@@ -9,6 +9,7 @@ $site = DB::table('konfigurasi')->first();
 <meta name="description" content="{{ $deskripsi }}">
 <meta name="keywords" content="{{ $keywords }}">
 <meta name="author" content="{{ $site->namaweb }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- icon -->
 <link rel="shortcut icon" href="{{ asset('public/upload/image/'.$site->icon) }}">
 <!-- Google Fonts -->
