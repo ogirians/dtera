@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-12">
               
-              <table id="example1" class="display table table-bordered" cellspacing="0" width="100%">
+              <table id="example1" class="display table-responsive table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
                     <tr class="" style="background-color:#1e4356; color:white; ">
