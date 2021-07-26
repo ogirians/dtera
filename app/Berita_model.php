@@ -124,7 +124,7 @@ class Berita_model extends Model
             ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori','users.nama')
             ->where('berita.status_berita','Publish')
             ->orderBy('id_berita','DESC')
-            ->paginate(4);
+            ->simplePaginate(4);
         return $query;
     }
 

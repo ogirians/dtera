@@ -63,22 +63,19 @@
            <?php if($cari != true){?>
               <article class="entry" style="padding:0px;">
               <div class="row" style="text-align:center;">
-                <div class="col-md-4" style="margin-top:35px;">
+                <div class="col-md-6" style="margin-top:35px;">
                   <a>Halaman : <?php  echo $beritas->currentPage() ?></a> <br/>
                 </div>
-                <div class="col-md-4" style="margin-top:35px;">
-                <p>Jumlah Artikel : <?php  echo $beritas->total() ?></p> <br/>
-                </div>
-                <div class="col-md-4" style="margin-top:35px;">
+                
+                <div class="col-md-6" style="margin-top:35px;">
                 <p>Data Per Halaman : <?php  echo $beritas->perPage() ?></p>   <br/>
                 </div>
-                 <div class="col-md-12" style="margin-top:35px;">
-                {{ $beritas->links() }}
-                </div>
               </div>
-               
               </article >
-             
+              <div class="col-md-12" style="margin-top:35px;">
+                 {{ $beritas->links() }}
+              </div>
+          
             <?php } ?>           
                       
             

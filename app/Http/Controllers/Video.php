@@ -15,7 +15,7 @@ class Video extends Controller
         $video = DB::table('video')
                     ->select('*')
                     ->orderBy('id_video','DESC')
-                    ->paginate(10);
+                    ->simplePaginate(10);
        	$site 	= DB::table('konfigurasi')->first();
 
 		$data = array(  'title'		=> 'Video '.$site->namaweb,

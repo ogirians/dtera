@@ -39,7 +39,7 @@
                     <a class="icofont-rounded-right" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')"></a>
                 </li>
             @else
-                <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
+                <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
                         <i class="icofont-rounded-right" aria-hidden="true" ></i>
                 </li>
             @endif
