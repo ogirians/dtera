@@ -53,7 +53,7 @@ $(function() {
     
     <div class="col-md-6 alert alert-success">
         <label>Your current background</label><br>
-        <img src="{{ asset('public/template/assets/img/hero-bg.jpg') }}" style="max-width:200px; height:auto;">
+        <img src="{{ asset('public/upload/image/'.$site->background) }}" style="max-width:200px; height:auto;">
     </div>
     
     <div class="col-md-12">

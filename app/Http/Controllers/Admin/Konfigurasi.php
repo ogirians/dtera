@@ -210,18 +210,21 @@ class Konfigurasi extends Controller
         $image                  = $request->file('background');
         $filenamewithextension  = $request->file('background')->getClientOriginalName();
         $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-        $input['nama_file']     = 'hero-bg.jpg';
-        $destinationPath        = public_path('template/assets/img/');
+        $input['nama_file']     = str_slug($filename, '-').'-'.time().'.'.$image->getClientOriginalExtension();
+        $destinationPath        = public_path('upload/image/thumbs/');
         $img = Image::make($image->getRealPath(),array(
             'width'     => 150,
             'height'    => 150,
             'grayscale' => false
         ));
-        //$img->save($destinationPath.'/'.$input['nama_file']);
-        //$destinationPath = public_path('upload/image/');
+        $img->save($destinationPath.'/'.$input['nama_file']);
+        $destinationPath =  public_path('upload/image/');
         $image->move($destinationPath, $input['nama_file']);
 
-        //$file = $request->file('background')->storeAs($destinationPath, 'hero-bg.jpg');
+        DB::table('konfigurasi')->where('id_konfigurasi',$request->id_konfigurasi)->update([
+            'id_user'  => Session()->get('id_user'),
+            'background'     => $input['nama_file']
+        ]);
     
         return redirect('admin/konfigurasi/background')->with(['sukses' => 'background telah diupdate']);
     }

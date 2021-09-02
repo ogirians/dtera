@@ -36,7 +36,8 @@ class Home extends Controller
                         'produks'	=> $produks,
                         'berita'    => $berita,
                         'video'     => $video,
-                        'content'   => 'home/index'
+                        'content'   => 'home/index',
+                        'background' => $site->background,
                     );
         return view('layout/wrapper',$data);
     }

@@ -1,4 +1,19 @@
+<style>
+      #hero::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 130%;
+      height: 95%;
+      background: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("{{ asset('public/upload/image/'.$site->background) }}") center top repeat;
+      background-size: cover;
+      z-index: 0;
+      border-radius: 0 0 50% 50%;
+      transform: translateX(-50%) rotate(0deg);
+}
 
+</style>
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex justify-cntent-center align-items-center">
       <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
