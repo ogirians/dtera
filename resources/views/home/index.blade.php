@@ -127,9 +127,9 @@
                       <img src="{{ asset('public/upload/image/thumbs/'.$berita->gambar) }}" alt="<?php  echo $berita->judul_berita ?>">
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title"><a href="{{ asset('read/'.$berita->slug_berita) }}"><?php  echo $berita->judul_berita ?></a></h5>
+                      <h5 class="card-title"><a href="{{ asset('/berita/read/'.$berita->slug_berita) }}"><?php  echo $berita->judul_berita ?></a></h5>
                       <p class="card-text"><?php echo \Illuminate\Support\Str::limit(strip_tags($berita->isi), 250, $end='...') ?></p>
-                      <div class="read-more"><a href="{{ asset('read/'.$berita->slug_berita) }}"><i class="icofont-arrow-right"></i> Read More</a></div>
+                      <div class="read-more"><a href="{{ asset('/berita/read/'.$berita->slug_berita) }}"><i class="icofont-arrow-right"></i> Read More</a></div>
                     </div>
                   </div>
                 </div>

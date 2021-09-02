@@ -7,6 +7,8 @@ $site                 = DB::table('konfigurasi')->first();
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache">
+  
 <title>{{ $title }}</title>
 <!-- icon -->
 <link rel="shortcut icon" href="{{ asset('public/upload/image/'.$site->icon) }}">

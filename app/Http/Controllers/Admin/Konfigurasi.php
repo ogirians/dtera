@@ -37,6 +37,19 @@ class Konfigurasi extends Controller
         return view('admin/layout/wrapper',$data);
     }
 
+    public function background()
+    {
+        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
+        $mykonfigurasi  = new Konfigurasi_model();
+        $site           = $mykonfigurasi->listing();
+
+        $data = array(  'title'        => 'Update Background',
+                        'site'         => $site,
+                        'content'      => 'admin/konfigurasi/background'
+                    );
+        return view('admin/layout/wrapper',$data);
+    }
+
     // gambar
     public function gambar()
     {
@@ -185,6 +198,34 @@ class Konfigurasi extends Controller
         ]);
         return redirect('admin/konfigurasi/logo')->with(['sukses' => 'Logo telah diupdate']);
     }
+
+    //background
+    public function proses_background(Request $request)
+    {
+        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
+        request()->validate([
+                            'background'        => 'required|file|image|mimes:jpeg,png,jpg',
+                            ]);
+        // UPLOAD START
+        $image                  = $request->file('background');
+        $filenamewithextension  = $request->file('background')->getClientOriginalName();
+        $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+        $input['nama_file']     = 'hero-bg.jpg';
+        $destinationPath        = public_path('template/assets/img/');
+        $img = Image::make($image->getRealPath(),array(
+            'width'     => 150,
+            'height'    => 150,
+            'grayscale' => false
+        ));
+        //$img->save($destinationPath.'/'.$input['nama_file']);
+        //$destinationPath = public_path('upload/image/');
+        $image->move($destinationPath, $input['nama_file']);
+
+        //$file = $request->file('background')->storeAs($destinationPath, 'hero-bg.jpg');
+    
+        return redirect('admin/konfigurasi/background')->with(['sukses' => 'background telah diupdate']);
+    }
+
 
     // icon
     public function proses_icon(Request $request)

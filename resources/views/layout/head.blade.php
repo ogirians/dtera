@@ -10,6 +10,7 @@ $site = DB::table('konfigurasi')->first();
 <meta name="keywords" content="{{ $keywords }}">
 <meta name="author" content="{{ $site->namaweb }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="cache-control" content="no-cache">
 <!-- icon -->
 <link rel="shortcut icon" href="{{ asset('public/upload/image/'.$site->icon) }}">
 <!-- Google Fonts -->
@@ -27,7 +28,7 @@ $site = DB::table('konfigurasi')->first();
   <link href="{{ asset('public/template/assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
   
   <!-- Template Main CSS File -->
-    <link href="{{ asset('public/template/assets/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/template/assets/css/style.css') }}?<?php echo date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet">
    <script src="{{ asset('public/admin/vendor/jquery/jquery.min.js') }}"></script>
   <!-- JQUERY UI -->
   <link rel="stylesheet" href="{{ asset('public/jquery-ui/jquery-ui.min.css') }}">

@@ -83,12 +83,14 @@ function()
     // konfigurasi
     Route::get('admin/konfigurasi', 'Konfigurasi@index');
     Route::get('admin/konfigurasi/logo', 'Konfigurasi@logo');
+    Route::get('admin/konfigurasi/background', 'Konfigurasi@background');
     Route::get('admin/konfigurasi/icon', 'Konfigurasi@icon');
     Route::get('admin/konfigurasi/email', 'Konfigurasi@email');
     Route::get('admin/konfigurasi/gambar', 'Konfigurasi@gambar');
     Route::get('admin/konfigurasi/pembayaran', 'Konfigurasi@pembayaran');
     Route::post('admin/konfigurasi/proses', 'Konfigurasi@proses');
     Route::post('admin/konfigurasi/proses_logo', 'Konfigurasi@proses_logo');
+    Route::post('admin/konfigurasi/proses_background', 'Konfigurasi@proses_background');
     Route::post('admin/konfigurasi/proses_icon', 'Konfigurasi@proses_icon');
     Route::post('admin/konfigurasi/proses_email', 'Konfigurasi@proses_email');
     Route::post('admin/konfigurasi/proses_gambar', 'Konfigurasi@proses_gambar');

@@ -152,6 +152,7 @@ $site                 = DB::table('konfigurasi')->first();
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{ asset('admin/konfigurasi') }}"><i class="fa fa-newspaper"></i> Setting Website</a>
             <a class="collapse-item" href="{{ asset('admin/konfigurasi/logo') }}"><i class="fa fa-image"></i> Ganti Logo</a>
+            <a class="collapse-item" href="{{ asset('admin/konfigurasi/background') }}"><i class="fa fa-image"></i> Ganti background</a>
             <a class="collapse-item" href="{{ asset('admin/konfigurasi/icon') }}"><i class="fa fa-tree"></i> Ganti Icon</a>
             <a class="collapse-item" href="{{ asset('admin/konfigurasi/email') }}"><i class="fa fa-envelope"></i> Setting Email</a>
             <a class="collapse-item" href="{{ asset('admin/konfigurasi/gambar') }}"><i class="fa fa-lock"></i> Ganti Gambar Login</a>
